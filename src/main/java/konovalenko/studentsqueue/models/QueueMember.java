@@ -90,5 +90,11 @@ public class QueueMember {
         this.queueMemberId = queueMemberId;
         this.joined = LocalDateTime.now();
     }
+
+    public QueueMember(Student student, Queue queue) {
+        this(student.getStudentId(), queue.getQueueId());
+        this.student = student;
+        this.queue = queue;
+    }
 }
 

@@ -45,6 +45,10 @@ public class QueueService {
         queueRepository.deleteById(id);
     }
 
+    public Queue findQueueById(Long id) {
+        return queueRepository.findById(id).orElseThrow(QueueNotFoundException::new);
+    }
+
     @Transactional
     public Queue updateQueue(Long queueId, Queue queue) {
         if (!queueRepository.existsById(queueId)) {

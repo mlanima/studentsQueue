@@ -54,9 +54,7 @@ public class StudentController{
 
     @GetMapping( path = "{studentId}/queues")
     public List<Queue> getQueues(@PathVariable Long studentId){
-        return this.studentService.getAllQueuesByStudent(
-                this.studentService.findStudentById(studentId)
-        );
+        return this.studentService.getAllQueuesByStudent(studentId);
     }
 
 

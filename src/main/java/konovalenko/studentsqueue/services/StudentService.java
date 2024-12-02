@@ -82,9 +82,15 @@ public class StudentService {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    public List<Queue> getAllQueuesByStudent(Student student) {
-        return this.queueMemberRepository.findByStudent(student).stream()
+    public List<Queue> getAllQueuesByStudent(Long studentId) {
+        Student student = findStudentById(studentId);
+
+        return this.queueMemberRepository.
+                findByStudent(student)
+                .stream()
                 .map(QueueMember::getQueue)
                 .toList();
     }
+
+
 }

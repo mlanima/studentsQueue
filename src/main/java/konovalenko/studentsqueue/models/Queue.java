@@ -23,7 +23,7 @@ public class Queue {
     )
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private int queueId;
+    private Long queueId;
 
     @NaturalId
     @NotNull
@@ -46,11 +46,11 @@ public class Queue {
     }
 
 
-    public int getQueueId() {
+    public Long getQueueId() {
         return queueId;
     }
 
-    public void setQueueId(int id) {
+    public void setQueueId(Long id) {
         this.queueId = id;
     }
 
